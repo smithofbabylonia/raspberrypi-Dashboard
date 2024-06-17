@@ -3,11 +3,11 @@ import axios from 'axios';
 import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
 import 'react-circular-progressbar/dist/styles.css';
 
-const CrescentTemperature = ({ title }) => {
+const CrescentTemperature = ({ title, server }) => {
   const [temperature, setTemperature] = useState(64);
 
   useEffect(() => {
-    axios.get('/api/temperature')
+    axios.get(`${server}/temperature`)
       .then(response => setTemperature(response.data.temperature))
       .catch(error => console.error('Error fetching temperature data:', error));
   }, []);

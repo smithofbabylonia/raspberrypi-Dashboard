@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const Storage = () => {
+function Storage({server}){
   const [storage, setStorage] = useState({ total: '', used: '', free: '' });
 
   useEffect(() => {
-    axios.get('http://192.168.1.101:5000/api/storage')
+    axios.get(`${server}/storage`)
       .then(response => setStorage(response.data))
       .catch(error => console.error('Error fetching storage data:', error));
   }, []);

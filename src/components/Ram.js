@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-const Ram = () => {
+function Ram({server}){
   const [ram, setRam] = useState({ total: 1846, used: 1720, free: 126 });
 
   useEffect(() => {
-    axios.get('http://192.168.1.101:5000/api/ram')
+    axios.get(`${server}/ram`)
       .then(response => setRam(response.data))
       .catch(error => console.error('Error fetching RAM data:', error));
   }, []);

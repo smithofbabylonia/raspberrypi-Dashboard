@@ -4,7 +4,7 @@ import axios from 'axios';
 
 
 
-function ServerApps(){
+function ServerApps({server}){
 
   const [activeApps, setActiveApps] = useState([
     { name: 'Pi-hole', status: 'green', image:'logo192.png' },
@@ -16,10 +16,19 @@ function ServerApps(){
   ]);
 
   useEffect(()=>{
-    axios.get("http://192.168.1.101:5000/status")
-    .then(response => setActiveApps(response.data.app_info))
-    .catch(error => console.error("An error occured: ", error))
-  });
+
+    function getData(){
+      axios.get(`${server}/status`)
+      .then(response => setActiveApps(response.data))
+      .catch(error => console.error("An error occured: ", error))
+    }
+
+    getData();
+
+    const interval = setInterval(getData, 5000);
+
+    return () => clearInterval(interval);
+  },[activeApps]);
 
   return (
     <div className="server-apps">

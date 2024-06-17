@@ -10,19 +10,20 @@ import NetworkActivity from './components/NetworkActivity';
 import CrescentTemperature from './components/CrescentTemperature';
 
 function App() {
+  const server_link = "192.168.1.101:5000/api";
   return (
     <div className="App">
       <h1>Dashboard</h1>
       <div className="dashboard">
-        <div className="section metrics">
-          <CrescentTemperature title="Temp 2" />
-          <Storage />
-          <Ram />
-          <NetworkActivity />
+        <div className="section metrics" server={server_link}>
+          <CrescentTemperature title="Temp 2" server={server_link}/>
+          <Storage server={server_link}/>
+          <Ram server={server_link}/>
+          <NetworkActivity server={server_link}/>
         </div>
         
         <div className="section apps">
-          <ServerApps />
+          <ServerApps server={server_link}/>
         </div>
       </div>
     </div>

@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 
-const Temperature = ({ title }) => {
+function Temperature({ title, server }){
   const [temperature, setTemperature] = useState(34);
 
   useEffect(() => {
-    axios.get('/api/temperature')
+    axios.get(`${server}/temperature`)
       .then(response => setTemperature(response.data.temperature))
       .catch(error => console.error('Error fetching temperature data:', error));
   }, []);

@@ -30,7 +30,7 @@ const options = {
   },
 };
 
-const NetworkActivity = () => {
+function NetworkActivity({server}){
   return (
     <div className="network-activity">
       <h3>Wlan0</h3>
