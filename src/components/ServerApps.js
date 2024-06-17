@@ -4,6 +4,7 @@ const apps = [
   { name: 'Pi-hole', status: 'green' },
   { name: 'qBittorrent', status: 'green' },
   { name: 'NginX', status: 'green' },
+  {name:'Phonebook',status:'orange'},
   { name: 'SSH', status: 'green' },
   { name: 'JellyFin', status: 'red' },
 ];
@@ -11,7 +12,7 @@ const apps = [
 const ServerApps = () => {
   return (
     <div className="server-apps">
-      <h3>Your Apps</h3>
+      <h3>Them Apps</h3>
       <div className="apps-grid">
         {apps.map(app => (
           <div key={app.name} className="app">

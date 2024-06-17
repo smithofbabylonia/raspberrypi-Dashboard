@@ -25,8 +25,15 @@
   border: 1px solid #ccc;
   padding: 20px;
   margin: 10px;
-  width: 200px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.crescent-temperature, .temperature, .storage, .ram, .network-activity{
+  width: 150px;
+}
+
+.server-apps{
+  width: 65vw;
 }
 
 .crescent-temperature h3, .storage h3, .ram h3, .network-activity h3, .server-apps h3 {
@@ -69,10 +76,12 @@
   border-radius: 10px;
 }
 
-.server-apps .apps-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px;
+
+.apps-grid{
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 10px;
 }
 
 .server-apps .app {
@@ -81,6 +90,11 @@
   border: 1px solid #ccc;
   padding: 10px;
   border-radius: 5px;
+}
+
+.app{
+  width: 250px;
+  height: 250px;
 }
 
 .server-apps .status {
@@ -96,4 +110,8 @@
 
 .server-apps .status.red {
   background: red;
-}  
+} 
+
+.server-apps .status.orange {
+  background: orange;
+} 
