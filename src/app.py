@@ -17,6 +17,42 @@ def get_ram():
     mem = subprocess.check_output(['free', '-m']).decode().split()[7:10]
     return {'total': mem[0], 'used': mem[1], 'free': mem[2]}
 
+def is_installed(app_name):
+    try:
+        subprocess.check_output(["which", app_name])
+        return "yes"
+    except subprocess.CalledProcessError:
+        return "no"
+
+def is_running(service_name):
+    try:
+        output = subprocess.check_output(["systemctl", "is-active", service_name]).decode().strip()
+        return "green" if output == "active" else "red"
+    except subprocess.CalledProcessError:
+        return "orange"
+
+def get_app_info():
+    apps = [
+        {"name": "SSH", "service_name": "ssh", "port": 22, "image":'logo192.png' },
+        {"name": "qbittorrent", "service_name": "qbittorrent-nox", "port": 4646, "image":'logo192.png'},
+        {"name": "pihole", "service_name": "pihole-FTL", "port": 80, "image":'logo192.png'},
+        {"name": "jellyfin", "service_name": "jellyfin", "port": 8096, "image":'logo192.png'},
+        {"name": "phonebook", "service_name": "phonebook", "port": 1618, "image":'logo192.png'}
+    ]
+
+    app_info = []
+    for app in apps:
+        info = {
+            "name": app["name"],
+            "installed": is_installed(app["service_name"]),
+            "status": is_running(app["service_name"]),
+            "port": app["port"],
+            "image": app["image"]
+        }
+        app_info.append(info)
+    return app_info
+
+
 @app.route('/api/storage')
 def storage():
     return jsonify(get_storage())
@@ -28,6 +64,10 @@ def temperature():
 @app.route('/api/ram')
 def ram():
     return jsonify(get_ram())
+
+@app.route('/api/status', methods=['GET'])
+def status():
+    return jsonify(get_app_info())
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
