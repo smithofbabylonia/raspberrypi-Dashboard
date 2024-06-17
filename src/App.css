@@ -5,7 +5,6 @@
 
 .dashboard {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-around;
 }
 
@@ -17,7 +16,7 @@
   width: 72vw;
 }
 
-.metric{
+.metrics{
   width: 23vw;
 }
 
@@ -29,7 +28,7 @@
 }
 
 .crescent-temperature, .temperature, .storage, .ram, .network-activity{
-  width: 150px;
+  width: 250px;
 }
 
 .server-apps{
@@ -46,6 +45,10 @@
   height: 100px;
   margin: 0 auto;
   position: relative;
+}
+
+.CircularProgressbar{
+  width: 30% !important;
 }
 
 .circle {
@@ -88,12 +91,12 @@
   display: flex;
   align-items: center;
   border: 1px solid #ccc;
-  padding: 10px;
+  padding: 5px;
   border-radius: 5px;
 }
 
 .app{
-  width: 250px;
+  width: 210px;
   height: 250px;
 }
 
