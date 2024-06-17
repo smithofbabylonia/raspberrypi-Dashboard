@@ -1,0 +1,99 @@
+.App {
+  text-align: center;
+  padding: 20px;
+}
+
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.section {
+  margin: 20px;
+}
+
+.apps{
+  width: 72vw;
+}
+
+.metric{
+  width: 23vw;
+}
+
+.crescent-temperature, .temperature, .storage, .ram, .network-activity, .server-apps {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  width: 200px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.crescent-temperature h3, .storage h3, .ram h3, .network-activity h3, .server-apps h3 {
+  margin-bottom: 20px;
+}
+
+
+.gauge {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.circle {
+  width: 100%;
+  height: 100%;
+  border: 5px solid #ccc;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.temperature-value {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.bar {
+  background: #e0e0e0;
+  height: 20px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+.used {
+  background: #76c7c0;
+  height: 100%;
+  border-radius: 10px;
+}
+
+.server-apps .apps-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.server-apps .app {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.server-apps .status {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.server-apps .status.green {
+  background: green;
+}
+
+.server-apps .status.red {
+  background: red;
+}  
