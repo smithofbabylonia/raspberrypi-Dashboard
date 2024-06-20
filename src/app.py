@@ -1,9 +1,11 @@
 # app.py
 from flask import Flask, jsonify
+from flask_cors import CORS
 import subprocess
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 def get_storage():
     total, used, free = subprocess.check_output(['df', '/']).decode().split()[8:11]

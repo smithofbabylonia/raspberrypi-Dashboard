@@ -10,7 +10,7 @@ import NetworkActivity from './components/NetworkActivity';
 import CrescentTemperature from './components/CrescentTemperature';
 
 function App() {
-  const server_link = "192.168.1.101:5000/api";
+  const server_link = "http://192.168.1.101:5000/api";
   return (
     <div className="App">
       <h1>Dashboard</h1>

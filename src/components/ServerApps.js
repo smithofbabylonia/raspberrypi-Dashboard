@@ -17,24 +17,28 @@ function ServerApps({server}){
 
   useEffect(()=>{
 
-    function getData(){
-      axios.get(`${server}/status`)
-      .then(response => setActiveApps(response.data))
-      .catch(error => console.error("An error occured: ", error))
+    async function getData(){
+      try{
+        const response = await axios.get(`${server}/status`);
+        setActiveApps(response.data);
+      }catch(err){
+        console.error(err.message);
+      }
     }
 
     getData();
-
+/*
     const interval = setInterval(getData, 5000);
 
     return () => clearInterval(interval);
-  },[activeApps]);
+*/
+  });
 
   return (
     <div className="server-apps">
       <h3>Them Apps</h3>
       <div className="apps-grid">
-        {activeApps.map(app => (<AppItem name={app.name} image={app.image} port={80} status={app.status}/>))}
+        {activeApps.map(app => (<AppItem key={app.name} name={app.name} image={app.image} port={80} status={app.status}/>))}
       </div>
     </div>
   );
