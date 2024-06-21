@@ -2,13 +2,27 @@
   padding: 0; margin: 0; border: 0;
 }
 
+body{
+  background-image: url("bg_image.png");
+}
+
+.diff{
+  height: 2px;
+  background-image: linear-gradient(to right, cyan , blueviolet, cyan);
+}
+
 a{
   text-decoration: none;
+}
+
+p{
+  font-size: 13px;
 }
 
 .App {
   text-align: center;
   padding: 20px;
+  background-color: #ffffffd4;
 }
 
 .dashboard {
@@ -36,15 +50,18 @@ a{
 }
 
 .crescent-temperature, .temperature, .storage, .ram, .network-activity{
-  width: 250px;
+  width: 280px;
+  background-color: white;
 }
 
 .server-apps{
   width: 65vw;
+  background-color: white;
 }
 
 .crescent-temperature h3, .storage h3, .ram h3, .network-activity h3, .server-apps h3 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  font-size: 15px;
 }
 
 
@@ -56,7 +73,7 @@ a{
 }
 
 .CircularProgressbar{
-  width: 30% !important;
+  width: 25% !important;
 }
 
 .circle {
