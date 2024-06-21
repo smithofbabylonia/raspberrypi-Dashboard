@@ -10,7 +10,7 @@ const CrescentTemperature = ({ title, server }) => {
     axios.get(`${server}/temperature`)
       .then(response => setTemperature(response.data.temperature))
       .catch(error => console.error('Error fetching temperature data:', error));
-  }, []);
+  });
 
   // Calculate the percentage for the gauge
   const percentage = (temperature / 100) * 100;

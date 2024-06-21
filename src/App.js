@@ -14,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <h1>Dashboard</h1>
+      <div className='diff'/>
       <div className="dashboard">
         <div className="section metrics" server={server_link}>
           <CrescentTemperature title="Temp 2" server={server_link}/>

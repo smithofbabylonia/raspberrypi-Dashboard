@@ -8,7 +8,7 @@ function Ram({server}){
     axios.get(`${server}/ram`)
       .then(response => setRam(response.data))
       .catch(error => console.error('Error fetching RAM data:', error));
-  }, []);
+  });
 
   return (
     <div className="ram">
