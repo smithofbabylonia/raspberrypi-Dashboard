@@ -27,6 +27,15 @@ const CrescentTemperature = ({ title, server }) => {
 
   return (
     <div className="crescent-temperature">
+      <h3>Temp 1</h3>
+      <CircularProgressbar
+        value={percentage}
+        text={`${temperature}°C`}
+        styles={gradientStyles}
+        strokeWidth={10}
+        circleRatio={1}
+        
+      />
       <h3>{title}</h3>
       <CircularProgressbar
         value={percentage}

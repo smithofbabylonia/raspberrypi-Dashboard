@@ -54,6 +54,13 @@ p{
   background-color: white;
 }
 
+.crescent-temperature{
+  display: flex;
+  height: 100px;
+  flex-flow: column;
+  flex-wrap: wrap;
+}
+
 .server-apps{
   width: 65vw;
   background-color: white;
@@ -74,6 +81,7 @@ p{
 
 .CircularProgressbar{
   width: 25% !important;
+  padding-left: 35px;
 }
 
 .circle {
