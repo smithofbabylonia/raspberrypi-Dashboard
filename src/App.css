@@ -118,6 +118,10 @@ p{
   gap: 20px;
   flex-wrap: wrap;
   padding: 10px;
+  height: 72.5vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 
