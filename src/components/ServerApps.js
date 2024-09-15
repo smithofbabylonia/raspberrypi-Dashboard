@@ -13,6 +13,7 @@ function ServerApps({server}){
     {name:'Phonebook',status:'orange', image:'logo192.png' },
     { name: 'SSH', status: 'green' , image:'logo192.png'},
     { name: 'JellyFin', status: 'red', image:'logo192.png' },
+    { name: 'Handbrake', status: 'red', image:'logo192.png' },
   ]);
 
   useEffect(()=>{
