@@ -11,6 +11,9 @@
 # production
 /build
 
+#Enironment
+/rpi-dash
+
 # misc
 .DS_Store
 .env.local
