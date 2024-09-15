@@ -5,10 +5,16 @@ function Storage({server}){
   const [storage, setStorage] = useState({ total: '', used: '', free: '' });
 
   useEffect(() => {
-    axios.get(`${server}/storage`)
-      .then(response => setStorage(response.data))
-      .catch(error => console.error('Error fetching storage data:', error));
-  }, []);
+
+    const fetchStorage = () =>{
+      axios.get(`${server}/storage`)
+        .then(response => setStorage(response.data))
+        .catch(error => console.error('Error fetching storage data:', error));
+    }
+    fetchStorage();
+    const interval = setInterval(fetchStorage,10000);
+    return () => clearInterval(interval);
+  }, [server]);
 
   return (
     <div className="storage">
@@ -16,7 +22,11 @@ function Storage({server}){
       <div className="bar">
         <div className="used" style={{ width: `${(storage.used / storage.total) * 100}%` }}></div>
       </div>
+<<<<<<< HEAD
       <p>{Math.round((storage.used/1048576)*100)/100}GB of {Math.round((storage.total/1048576)*100)/100}GB used</p>
+=======
+      <p>{Math.round(storage.used/1048576)}GB of {Math.round(storage.total/1048576)}GB used</p>
+>>>>>>> 6d96138d428cd8c30aee2bec84a8334a47c59684
     </div>
   );
 };

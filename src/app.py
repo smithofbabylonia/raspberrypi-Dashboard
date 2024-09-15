@@ -36,10 +36,10 @@ def is_running(service_name):
 def get_app_info():
     apps = [
         {"name": "SSH", "service_name": "ssh", "port": 22, "image":'logo192.png' },
-        {"name": "qbittorrent", "service_name": "qbittorrent-nox", "port": 4646, "image":'logo192.png'},
-        {"name": "pihole", "service_name": "pihole-FTL", "port": 80, "image":'logo192.png'},
-        {"name": "jellyfin", "service_name": "jellyfin", "port": 8096, "image":'logo192.png'},
-        {"name": "phonebook", "service_name": "phonebook", "port": 1618, "image":'logo192.png'}
+        {"name": "qBittorrent", "service_name": "qbittorrent-nox", "port": 4646, "image":'https://th.bing.com/th/id/R.4c9cde97a43302316d2a72891d0c9854?rik=dt3gOCc7gUCijw&pid=ImgRaw&r=0'},
+        {"name": "Pi-Hole", "service_name": "pihole-FTL", "port": 80, "image":'https://wp-cdn.pi-hole.net/wp-content/uploads/2016/12/Vortex-R.png'},
+        {"name": "JellyFin", "service_name": "jellyfin", "port": 8096, "image":'https://static-00.iconduck.com/assets.00/jellyfin-icon-2048x2048-tf5ztk6m.png'},
+        {"name": "Phonebook", "service_name": "phonebook", "port": 1618, "image":'logo192.png'}
     ]
 
     app_info = []

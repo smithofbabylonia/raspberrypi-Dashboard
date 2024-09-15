@@ -155,4 +155,9 @@ p{
 
 .server-apps .status.orange {
   background: orange;
-} 
+}
+
+.app img{
+  width: 84%;
+  margin: 6%;
+}
