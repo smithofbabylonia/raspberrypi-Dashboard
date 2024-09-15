@@ -28,11 +28,11 @@ function ServerApps({server}){
 
     getData();
 
-    const interval = setInterval(getData, 10000);
+    const interval = setInterval(getData, 60000);
 
     return () => clearInterval(interval);
 
-  });
+  }, [server]);
 
   return (
     <div className="server-apps">

@@ -5,10 +5,16 @@ function Storage({server}){
   const [storage, setStorage] = useState({ total: '', used: '', free: '' });
 
   useEffect(() => {
-    axios.get(`${server}/storage`)
-      .then(response => setStorage(response.data))
-      .catch(error => console.error('Error fetching storage data:', error));
-  }, []);
+
+    const fetchStorage = () =>{
+      axios.get(`${server}/storage`)
+        .then(response => setStorage(response.data))
+        .catch(error => console.error('Error fetching storage data:', error));
+    }
+    fetchStorage();
+    const interval = setInterval(fetchStorage,10000);
+    return () => clearInterval(interval);
+  }, [server]);
 
   return (
     <div className="storage">
