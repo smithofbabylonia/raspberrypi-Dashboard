@@ -28,7 +28,7 @@ function Ram({server}){
       <div className="bar">
         <div className="used" style={{ width: `${(ram.used / ram.total) * 100}%` }}></div>
       </div>
-      <p>{ram.used}GB of {ram.total}GB used</p>
+      <p>{ram.used}MB of {ram.total}MB used</p>
     </div>
   );
 }
