@@ -22,11 +22,7 @@ function Storage({server}){
       <div className="bar">
         <div className="used" style={{ width: `${(storage.used / storage.total) * 100}%` }}></div>
       </div>
-<<<<<<< HEAD
       <p>{Math.round((storage.used/1048576)*100)/100}GB of {Math.round((storage.total/1048576)*100)/100}GB used</p>
-=======
-      <p>{Math.round(storage.used/1048576)}GB of {Math.round(storage.total/1048576)}GB used</p>
->>>>>>> 6d96138d428cd8c30aee2bec84a8334a47c59684
     </div>
   );
 };
