@@ -23,7 +23,7 @@ function Ram({server}){
   }, [server]); // The server URL is a dependency
 
   return (
-    <div className="ram">
+    <div className="ram blur">
       <h3>RAM</h3>
       <div className="bar">
         <div className="used" style={{ width: `${(ram.used / ram.total) * 100}%` }}></div>

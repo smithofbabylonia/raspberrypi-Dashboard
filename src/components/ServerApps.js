@@ -36,7 +36,7 @@ function ServerApps({server}){
   }, [server]);
 
   return (
-    <div className="server-apps">
+    <div className="server-apps blur">
       <h3>Them Apps</h3>
       <div className="apps-grid">
         {activeApps.map(app => (<AppItem key={app.name} name={app.name} image={app.image} port={80} status={app.status}/>))}

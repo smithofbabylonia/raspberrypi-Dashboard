@@ -17,7 +17,7 @@ function Storage({server}){
   }, [server]);
 
   return (
-    <div className="storage">
+    <div className="storage blur">
       <h3>SD Card</h3>
       <div className="bar">
         <div className="used" style={{ width: `${(storage.used / storage.total) * 100}%` }}></div>

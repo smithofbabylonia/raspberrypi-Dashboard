@@ -12,7 +12,7 @@ function Temperature({ title, server }){
   }, []);
 
   return (
-    <div className="temperature">
+    <div className="temperature blur">
       <h3>{title}</h3>
       <div className="gauge">
         <div className="circle">
