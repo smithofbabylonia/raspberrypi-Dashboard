@@ -63,7 +63,11 @@ p{
 
 .server-apps{
   width: 65vw;
-  background-color: white;
+}
+
+.blur{
+  background-color: #00000010;
+  backdrop-filter: blur(3px);
 }
 
 .crescent-temperature h3, .storage h3, .ram h3, .network-activity h3, .server-apps h3 {
@@ -128,8 +132,13 @@ p{
 .app{
   width: 225px;
   height: 250px;
-  background-color: rgb(230, 247, 247);
+  background-color: #fff;
   align-items: center;
+  border: solid 1px #d4d4ff;
+}
+
+.app:hover{
+  border: solid 1px #82bffd;
 }
 
 .app-label{
