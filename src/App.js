@@ -7,7 +7,7 @@ import ServerApps from './components/ServerApps';
 import CrescentTemperature from './components/CrescentTemperature';
 
 function App() {
-  const server_link = "http://127.0.0.1:5000/api";
+  const server_link = "http://127.0.0.1:3838/api";
   return (
     <div className="App">
       <h1>Dashboard</h1>
