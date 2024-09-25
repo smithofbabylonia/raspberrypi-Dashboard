@@ -3,9 +3,25 @@ from flask import Flask, jsonify
 from flask_cors import CORS
 import subprocess
 import os
+import socket
 
 app = Flask(__name__)
 CORS(app)
+
+def get_local_ip():
+    # Connect to a public address (it won't actually make the connection, just to determine the IP)
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    try:
+        # Doesn't need to connect, just use any valid external address
+        s.connect(('8.8.8.8', 80))
+        local_ip = s.getsockname()[0]
+    except Exception as e:
+        print(f"Error getting local IP: {e}")
+        local_ip = None
+    finally:
+        s.close()
+
+    return local_ip
 
 def get_storage():
     total, used, free = subprocess.check_output(['df', '/']).decode().split()[8:11]
@@ -48,7 +64,7 @@ def get_app_info():
             "name": app["name"],
             "installed": is_installed(app["service_name"]),
             "status": is_running(app["service_name"]),
-            "port": app["port"],
+            "port": f'{get_local_ip()}:{app["port"]}',
             "image": app["image"]
         }
         app_info.append(info)
@@ -72,4 +88,6 @@ def status():
     return jsonify(get_app_info())
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    from waitress import serve
+    serve(app ,host='0.0.0.0', port=3838)
+
